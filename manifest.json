@@ -1,0 +1,49 @@
+{
+  "manifest_version": 2,
+
+  "name": "Weather",
+  "description": "This extension allows the user to get weather.",
+  "version": "1.0",
+  "icons": {
+    "128":"icons7.png",
+    "48":"icons7.png",
+    "16":"icons7.png"
+  },
+
+  "browser_action": {
+    "default_icon": "icons7.png",
+    "default_popup": "popup.html",
+    "default_title": "Click here!"
+  },
+
+  "content_scripts": [
+    {
+      "matches": ["http://www.google.com/*"],
+      "js": ["weather.js"]
+    }
+  ],
+
+  "background": {
+    "scripts": ["weather.js"]
+  },
+
+
+  "homepage_url": "http://path/to/homepage",
+
+  "permissions": [
+    "geolocation",
+    "activeTab",
+    "storage",
+    "contentSettings"
+    //"https://api.darksky.net"
+    //"https://query.yahooapis.com"
+    //"https://api.openweathermap.org"
+    //"https://api.worldweatheronline.com"
+  ],
+
+  "content_security_policy": "script-src 'self' https://query.yahooapis.com https://api.worldweatheronline.com https://api.openweathermap.org https://api.darksky.net; object-src 'self'",
+
+  "options_page": "options.html"
+
+
+}

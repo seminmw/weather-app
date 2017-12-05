@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css"
+    />
+    <link
+      rel  = "stylesheet"
+      type = "text/css"
+      href = "css/weather-icons.min.css"
+    />
+    <link
+      rel  = "stylesheet"
+      type = "text/css"
+      href = "css/style.css"
+    />
+    <link
+      rel  = "stylesheet"
+      type = "text/css"
+      href = "css/progress/load.css"
+    />
+    <link
+      rel  = "stylesheet"
+      type = "text/css"
+      href = "css/progress/load-1.css"
+    />
+
+    <title>Show the Local Weather</title>
+  </head>
+
+  <body style="width:800px; height:600px">
+
+    <div class="site-wrapper">
+
+      <div class="site-wrapper-inner">
+
+        <div id="loadingPage" class="page" style="display:none;">
+          <div class="cssload-loader">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+          </div>
+        </div>
+
+        <div id="errorPage" class="page" style="display:none;">
+          <div id="errorMessage"></div>
+          <div id="reload" class="btn btn-primary">Reload...</div>
+        </div>
+
+        <div id="weatherPage" class="page" style="display:none;">
+            <div class="inner cover">
+
+                <h1 class="cover-heading" id="city">Local weather</h1>
+                <p id="description"></p>
+                <i  style="font-size:40px; margin-top:7px;" ></i>
+                <p class="lead" id="text" style="margin-top:12px;"></p>
+
+                <p class="lead">
+                  <a class="btn btn-outline-light"    id="cel">Celsius</a>
+                  <a  class="btn btn-primary"  id="far">Fahrenheit</a>
+                </p>
+
+              </div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <script src="jquery.min.js"> </script>
+    <script src="js/api/DarkSky.js"></script>
+    <script src="js/api/Yahoo.js"></script>
+    <script src="js/api/OpenWeatherMap.js"></script>
+    <script src="js/api/WorldWeatherOnline.js"></script>
+    <script src="weather.js"> </script>
+  </body>
+</html>
